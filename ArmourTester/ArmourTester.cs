@@ -29,5 +29,17 @@ namespace ArmourTester
                 Assert.Fail();
             }
         }
+
+        [TestMethod]
+        public void TestMaxProt1()
+        {
+            Armour ar = new Armour("Jorma", "Kokkeli", 20, 2, 2);
+            int maxProt = ar.getMaxProt();
+
+            if (maxProt <= 2)
+            {
+                Assert.Fail();
+            }
+        }
     }
 }
