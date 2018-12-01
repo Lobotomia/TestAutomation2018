@@ -36,10 +36,11 @@ namespace ArmourTester
             Armour ar = new Armour("Jorma", "Kokkeli", 10, 2, 2);
             int maxProt = ar.getMaxProt();
 
-            if (maxProt > 20 || maxProt <0)
+            if (maxProt > 20 || maxProt < 0)
             {
                 Assert.Fail();
-            } 
+            }
+ 
         }
 
         [TestMethod]
@@ -48,10 +49,7 @@ namespace ArmourTester
             Armour ar = new Armour("Jeps", "Jeppulis", 20, 2, 2);
             string curCond = ar.getCondition();
 
-            if (curCond == null)
-            {
-                Assert.Fail();
-            }
+            Assert.IsNotNull(curCond);
         }
 
         [TestMethod]
@@ -63,5 +61,6 @@ namespace ArmourTester
 
             Assert.AreEqual(slot,level);
         }
+
     }
 }
